@@ -1,0 +1,206 @@
+.ak-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-sans-serif;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 50px;
+  width: 150px;
+  color: white;
+  background-color: rgba(gray, 0.95);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+  padding: 0;
+  cursor: pointer;
+
+  @include active-darken;
+
+  &__icon {
+    display: inline-flex;
+    width: 3rem;
+    height: 3rem;
+    fill: currentColor;
+  }
+
+  &__label {
+    display: inline-flex;
+    font-family: $font-sans-serif;
+    line-height: 1;
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+
+    + .ak-button-block {
+      margin-top: 20px;
+    }
+  }
+
+  // floating action button
+  &--fab {
+    display: inline-block;
+    width: 4rem;
+    height: 3.5rem;
+    background-color: rgba(gray, 0.6);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.8);
+    padding: 0;
+
+    &:active {
+      background-color: rgba(gray, 0.5);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .ak-button__icon {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+  }
+
+  &--outline {
+    border: 2px solid #fff;
+    font-family: $font-sans-serif;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  &--action {
+    text-align: right;
+    background-color: map-get($colors, "blue");
+    box-shadow: 2px 5px 50px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  &--advanced {
+    background-color: rgba(map-get($colors, "yellow"), 0.85);
+  }
+
+  &--light {
+    background-color: rgba(#eee, 0.85);
+  }
+
+  // &--with-info {}
+
+  &__info {
+    height: 30px;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    color: white;
+    font-family: $font-sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+
+    .ak-icon {
+      width: 3rem;
+      height: 3rem;
+      filter: drop-shadow(0 10px 15px black);
+      margin-top: -0.5rem;
+    }
+  }
+
+  &--card {
+    position: relative;
+    background-color: #eee;
+    box-shadow: 0 2px 8px rgba(black, 0.6);
+    width: 12.5rem;
+    height: 6rem;
+    color: black;
+    margin: 0.3rem;
+
+    .ak-icon {
+      position: absolute;
+      right: 0.2rem;
+      width: 5rem;
+      height: 5rem;
+      color: lightgray;
+    }
+
+    .label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-family: $font-serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      color: #999;
+      font-size: 21px;
+      position: absolute;
+      left: 14px;
+      top: 58px;
+    }
+
+    &.with-line {
+      &::before {
+        position: absolute;
+        content: "";
+        top: -2px;
+        width: 10rem;
+        height: 5px;
+        background-color: map-get($ak-colors, "accent");
+      }
+    }
+  }
+}
+
+.ak-button--start {
+  width: 38px;
+  height: 38px;
+  background-color: transparent;
+  border: 5px solid $yellow;
+  color: $yellow;
+  font-style: italic;
+  font-size: xx-small;
+  font-weight: bold;
+  margin: 10px;
+  transform: rotate(-45deg);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  cursor: pointer;
+
+  .icon {
+    color: $yellow;
+    transform: rotate(45deg) translate(22px, -10px);
+  }
+
+  .label {
+    transform: rotate(45deg) translateY(5px);
+    text-align: center;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    background-color: transparent;
+    border: 5px solid var(--ak-loading-color, $yellow);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: ak-radio;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes ak-radio {
+  from {
+    width: 38px;
+    height: 38px;
+    opacity: 1;
+  }
+
+  to {
+    width: 90px;
+    height: 90px;
+    opacity: 0;
+  }
+}

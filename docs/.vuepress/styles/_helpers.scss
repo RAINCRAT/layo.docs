@@ -1,0 +1,14 @@
+@each $color, $value in $ak-colors {
+  .bg-#{$color} {
+    background-color: $value;
+  }
+}
+
+// shadow
+.text-shadow {
+  text-shadow: 1px 1px 1px rgba(black, 0.3);
+}
+
+.drop-shadow {
+  filter: drop-shadow(1px 1px 1px rgba(black, 0.3));
+}

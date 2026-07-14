@@ -1,0 +1,98 @@
+// ak-ui 框架样式
+@import "variables";
+@import "helpers";
+@import "mixins";
+
+// components
+@import "ak-typography";
+@import "ak-button";
+@import "ak-button-group";
+@import "ak-card";
+@import "ak-counter";
+@import "ak-divider";
+@import "ak-form";
+@import "ak-fx";
+@import "ak-icon";
+@import "ak-level";
+@import "ak-loading";
+@import "ak-media";
+@import "ak-object";
+@import "ak-panel";
+@import "ak-pagination";
+@import "ak-san";
+
+// 全局页面样式（从 stylus 移植）
+body {
+  background-image: url('/img/bk.jpg');
+  background-size: cover;
+}
+
+.page {
+  min-height: 96vh;
+}
+
+.description {
+  color: #000 !important;
+}
+
+.navbar, .sidebar, .page {
+  background-color: rgba(#fff, 0.9);
+}
+
+.navbar {
+  .links {
+    background-color: transparent !important;
+  }
+}
+
+// index
+.home .features {
+  background-color: rgba(white, 0.3);
+  padding: 0 1rem !important;
+}
+
+// color layout
+.ak-color-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 22rem;
+}
+
+.ak-color-item {
+  width: 100%;
+  height: 4rem;
+  font-family: sans-serif;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  transition: 0.2s;
+  border-radius: 0.2rem;
+
+  &:hover {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.color-code {
+  text-transform: uppercase;
+}
+
+.ak-ref img {
+  width: 64px;
+}
+
+// sidebar
+.theme-container > .sidebar > .sidebar-links > li > a.sidebar-link {
+  font-weight: normal;
+}
+
+.theme-container > .sidebar > .sidebar-links > li > a.sidebar-link.active {
+  font-weight: bold;
+}

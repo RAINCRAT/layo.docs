@@ -1,0 +1,49 @@
+@use "sass:color";
+
+$blue: #2bf;
+$yellow: #ffd802;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    "blue": $blue,
+    "yellow": $yellow,
+    "dark-blue": #0075a8,
+    "light-blue": #3ff7ff,
+    "gray": #313131,
+    "dark": #222
+  ),
+  $colors
+);
+
+$color-low: #9c9c9c;
+$color-basic: #d8dd5a;
+$color-primary: #4aabea;
+$color-secondary: #cfc2d1;
+$color-advanced: #f1c644;
+
+$ak-colors: () !default;
+$ak-colors: map-merge($colors, $ak-colors);
+$ak-colors: map-merge(
+  (
+    "white": white,
+    "black": black,
+    "low": $color-low,
+    "basic": $color-basic,
+    "primary": $color-primary,
+    "secondary": $color-secondary,
+    "advanced": $color-advanced,
+    "accent": #f6540e,
+  ),
+  $ak-colors
+);
+
+// Typography
+$font-serif: Noto Serif SC, serif !default;
+$font-sans-serif: Noto Sans SC, Roboto, Arial, sans-serif !default;
+$font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, monospace !default;
+
+$text-color: #0098dc;
+// object
+$cube-size: 100px;
+$cube-border-width: 0.2rem;

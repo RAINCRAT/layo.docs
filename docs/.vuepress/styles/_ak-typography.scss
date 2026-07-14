@@ -1,0 +1,20 @@
+:root {
+  @each $color, $value in $ak-colors {
+    --ak-color-#{$color}: #{$value};
+  }
+}
+
+.ak-font-serif {
+  font-family: $font-serif;
+}
+
+.ak-font-sans-serif {
+  font-family: $font-sans-serif;
+}
+
+.ak-text {
+  &--title {
+    font-weight: 900;
+    font-size: 3rem;
+  }
+}

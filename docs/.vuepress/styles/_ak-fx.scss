@@ -1,0 +1,49 @@
+.ak-fx- {
+  &-glow {
+    animation-name: ak-glow;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  &-outline {
+    animation-name: ak-outline-fade;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+  }
+
+  &-skew {
+    &-left {
+      transform: skewX(-10deg);
+    }
+
+    &-right {
+      transform: skewX(10deg);
+    }
+  }
+}
+
+@keyframes ak-glow {
+  from {
+    box-shadow: 0 0 0 var(--ak-fx-glow-color, rgba(white, 0.3));
+  }
+
+  to {
+    box-shadow: 0 0 20px var(--ak-fx-glow-color, rgba(white, 0.3));
+  }
+}
+
+@keyframes ak-outline-fade {
+  from {
+    outline: 0.35rem solid var(--ak-outline-color, gray);
+    outline-width: 0.35rem;
+  }
+
+  to {
+    outline: 0.35rem solid transparent;
+    outline-width: 0.2rem;
+    outline-offset: 1.5rem;
+  }
+}
