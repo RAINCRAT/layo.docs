@@ -1,4 +1,4 @@
-import { defaultTheme } from '@vuepress/theme-default'
+import theme from './theme/index.js'
 import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
 
@@ -27,7 +27,7 @@ export default defineUserConfig({
     ],
   ],
 
-  theme: defaultTheme({
+  theme: theme({
     // logo: '/ak.svg',
 
     navbar: [
@@ -64,6 +64,7 @@ export default defineUserConfig({
     editLink: false,
     editLinkText: '帮助改善此页面！( ￣□￣)/',
     contributors: false,
+    colorMode: 'dark',
   }),
 
   bundler: viteBundler(),

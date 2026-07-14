@@ -3,7 +3,10 @@ home: true
 heroImage: 
 heroText: LAYOSERVE 泠域存储
 tagline: LAYOSERVE DOCS & BLOGS SITE
-footer: AGPL v3 Licensed | Copyright © RAINCRAT
+footer: |
+  <a href="https://icp.gov.moe/?keyword=20260812" target="_blank" class="no-blue">萌ICP备20260812号</a><br>
+  AGPL v3 Licensed | Copyright © RAINCRAT
+footerHtml: true
 title: 主页
 ---
 
