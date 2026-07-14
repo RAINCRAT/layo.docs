@@ -1,5 +1,5 @@
 <template><div><div style="text-align:center">
-  <a class="ak-button--start" href="/docs/">
+  <a class="ak-button--start" href="/blogs/">
     <div class="icon triangle-right"></div>
     <div class="label">ENTER</div>
   </a>
