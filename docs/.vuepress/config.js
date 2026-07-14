@@ -1,4 +1,5 @@
-import theme from './theme/index.js'
+import { defaultTheme } from '@vuepress/theme-default'
+import themeObj from './theme/index.js'
 import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
 
@@ -27,45 +28,48 @@ export default defineUserConfig({
     ],
   ],
 
-  theme: theme({
-    // logo: '/ak.svg',
+  theme: {
+    ...themeObj,
+    extends: defaultTheme({
+      // logo: '/ak.svg',
 
-    navbar: [
-      { text: '文档站首页', link: '/' },
-      { text: '文档', link: '/docs/' },
-      { text: '博客', link: '/blogs/' },
-    ],
-
-    sidebar: {
-      '/docs/': ['', 'style'],
-      '/blogs/': [
-        '',
-        'ak-button',
-        'ak-button-group',
-        'ak-card',
-        'ak-counter',
-        'ak-divider',
-        'ak-fx',
-        'ak-form',
-        'ak-icon',
-        'ak-level',
-        'ak-loading',
-        'ak-media',
-        'ak-object',
-        'ak-panel',
-        'ak-pagination',
-        'ak-san',
+      navbar: [
+        { text: '文档站首页', link: '/' },
+        { text: '文档', link: '/docs/' },
+        { text: '博客', link: '/blogs/' },
       ],
-    },
 
-    lastUpdated: '上次更新',
-    repo: 'https://github.com/RAINCRAT/layo.docs',
-    docsDir: 'docs',
-    editLink: false,
-    editLinkText: '帮助改善此页面！( ￣□￣)/',
-    contributors: false,
-    colorMode: 'dark',
-  }),
+      sidebar: {
+        '/docs/': ['', 'style'],
+        '/blogs/': [
+          '',
+          'ak-button',
+          'ak-button-group',
+          'ak-card',
+          'ak-counter',
+          'ak-divider',
+          'ak-fx',
+          'ak-form',
+          'ak-icon',
+          'ak-level',
+          'ak-loading',
+          'ak-media',
+          'ak-object',
+          'ak-panel',
+          'ak-pagination',
+          'ak-san',
+        ],
+      },
+
+      lastUpdated: '上次更新',
+      repo: 'https://github.com/RAINCRAT/layo.docs',
+      docsDir: 'docs',
+      editLink: false,
+      editLinkText: '帮助改善此页面！( ￣□￣)/',
+      contributors: false,
+      colorMode: 'dark',
+    }),
+  },
 
   bundler: viteBundler(),
 })
