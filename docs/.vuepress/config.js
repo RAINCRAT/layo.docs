@@ -2,6 +2,29 @@ import { defaultTheme } from '@vuepress/theme-default'
 import themeObj from './theme/index.js'
 import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
+import { readdirSync, statSync } from 'node:fs'
+import { join } from 'node:path'
+
+/**
+ * 自动扫描目录下的 markdown 文件，生成 sidebar 数组
+ * @param {string} subPath - 相对于 docs 目录的子路径，如 'docs'、'blogs'
+ * @returns {string[]} sidebar 配置数组
+ */
+function scanSidebar(subPath) {
+  const fullPath = join(process.cwd(), 'docs', subPath)
+  return readdirSync(fullPath)
+    .filter(file => {
+      const filePath = join(fullPath, file)
+      return statSync(filePath).isFile() && file.endsWith('.md')
+    })
+    .map(file => (file.replace(/\.md$/, '') === 'README' ? '' : file.replace(/\.md$/, '')))
+    .sort((a, b) => {
+      // README 始终排在最前面
+      if (a === '') return -1
+      if (b === '') return 1
+      return a.localeCompare(b)
+    })
+}
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -40,10 +63,8 @@ export default defineUserConfig({
       ],
 
       sidebar: {
-        '/docs/': ['', 'style'],
-        '/blogs/': [
-          '',
-        ],
+        '/docs/': scanSidebar('docs'),
+        '/blogs/': scanSidebar('blogs'),
       },
 
       lastUpdated: '上次更新',
