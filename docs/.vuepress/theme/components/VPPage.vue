@@ -1,9 +1,14 @@
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vuepress/client'
 import VPPage from '@vuepress/theme-default/lib/client/components/VPPage.vue'
+
+const route = useRoute()
+const isBlog = computed(() => route.path.startsWith('/blogs/'))
 </script>
 
 <template>
-  <VPPage>
+  <VPPage :class="{ 'blog-page': isBlog }">
     <template #bottom>
       <footer class="vp-footer">
         <a
