@@ -22,10 +22,10 @@
 @import "ak-san";
 
 // 全局页面样式（从 stylus 移植）
-body {
-  background-image: url('/img/bk.jpg');
-  background-size: cover;
-}
+// body {
+//   background-image: url('/img/bk.jpg');
+//   background-size: cover;
+// }
 
 .page {
   min-height: 96vh;
@@ -35,7 +35,9 @@ body {
   color: #000 !important;
 }
 
-.navbar, .sidebar, .page {
+.navbar,
+.sidebar,
+.page {
   background-color: rgba(#fff, 0.9);
 }
 
@@ -89,10 +91,10 @@ body {
 }
 
 // sidebar
-.theme-container > .sidebar > .sidebar-links > li > a.sidebar-link {
+.theme-container>.sidebar>.sidebar-links>li>a.sidebar-link {
   font-weight: normal;
 }
 
-.theme-container > .sidebar > .sidebar-links > li > a.sidebar-link.active {
+.theme-container>.sidebar>.sidebar-links>li>a.sidebar-link.active {
   font-weight: bold;
 }

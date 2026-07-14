@@ -9,14 +9,14 @@ export default defineUserConfig({
   description: 'LAYOSERVE 泠域存储',
 
   head: [
-    ['link', { rel: 'icon', href: '/ak.png' }],
-    [
-      'script',
-      {
-        async: true,
-        src: '//at.alicdn.com/t/font_1623879_1wzsjomrpmm.js',
-      },
-    ],
+    // ['link', { rel: 'icon', href: '/ak.png' }],
+    // [
+    //   'script',
+    //   {
+    //     async: true,
+    //     src: '//at.alicdn.com/t/font_1623879_1wzsjomrpmm.js',
+    //   },
+    // ],
     [
       'link',
       {
@@ -28,7 +28,7 @@ export default defineUserConfig({
   ],
 
   theme: defaultTheme({
-    logo: '/ak.svg',
+    // logo: '/ak.svg',
 
     navbar: [
       { text: '文档站首页', link: '/' },

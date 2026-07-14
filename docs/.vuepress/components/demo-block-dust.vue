@@ -13,9 +13,9 @@
 .demo-block-dust {
   padding: 0 1rem;
   margin: 1rem 0;
-  background-image: url("/img/bg/dust.jpg");
-  background-size: cover;
-  background-position: center;
+  // background-image: url("/img/bg/dust.jpg");
+  // background-size: cover;
+  // background-position: center;
   &.ak-card {
     > .title {
       color: white;

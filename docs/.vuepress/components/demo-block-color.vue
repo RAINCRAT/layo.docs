@@ -13,8 +13,8 @@
 .demo-block-color {
   padding: 0 1rem;
   margin: 1rem 0;
-  background-image: url("/img/bg/chen.jpg");
-  background-size: cover;
+  // background-image: url("/img/bg/chen.jpg");
+  // background-size: cover;
   &.ak-card {
     .title {
       color: white;
