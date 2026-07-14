@@ -1,6 +1,10 @@
+@use "sass:map";
+@use "variables" as *;
+
 .ak-button-group {
   width: 300px;
   display: flex;
+
   .ak-button {
     color: black;
     box-shadow: 0 2px 10px rgba(black, 0.1);
@@ -11,10 +15,12 @@
   &--action {
     background-color: var(--button-group-bgcolor, rgba(#05a6dc, 0.9));
     padding: 0.2rem;
+
     .ak-icon {
       margin: 0 0.2rem;
       color: gray;
     }
+
     .info {
       display: flex;
       background-color: #444;
@@ -26,6 +32,7 @@
 
     .button-group {
       display: flex;
+
       .ak-icon {
         position: absolute;
         left: 0;
@@ -33,6 +40,7 @@
         height: 3.5rem;
         color: rgba(white, 0.2);
       }
+
       .ak-button {
         display: inline-flex;
         flex-grow: 1;
@@ -55,6 +63,7 @@
 
     .left {
       flex-grow: 1;
+
       .ak-button {
         width: 100%;
         height: 100%;
@@ -77,6 +86,7 @@
         }
       }
     }
+
     .right {
       flex-grow: 1.6;
       box-shadow: 0 0 4px rgba(black, 0.3);
@@ -88,15 +98,18 @@
     position: relative;
     background: #444;
     width: 17.5rem;
+
     .ak-button--card {
       margin: 0;
+
       .ak-icon {
         width: 6rem;
         height: 6rem;
       }
     }
+
     .subtitle {
-      color: map-get($ak-colors, "accent");
+      color: map.get($ak-colors, "accent");
       position: absolute;
       top: 56px;
       left: 10px;
@@ -104,6 +117,7 @@
       font-weight: 700;
       font-family: "Syncopate", sans-serif;
     }
+
     .small {
       position: absolute;
       width: 4.5rem;
@@ -113,6 +127,7 @@
       flex-direction: column;
       align-items: center;
       padding-top: 0.8rem;
+
       .label {
         font-family: $font-serif;
         color: white;

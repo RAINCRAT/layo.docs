@@ -1,9 +1,12 @@
+@use "mixins" as *;
+
 .ak-pagination {
   display: inline-flex;
   height: 5rem;
   width: 16rem;
   background-color: #999;
   color: white;
+
   .prev,
   .next {
     position: relative;

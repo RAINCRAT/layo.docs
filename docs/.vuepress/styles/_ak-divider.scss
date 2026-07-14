@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .ak-divider {
   display: flex;
   align-items: center;
@@ -9,6 +11,7 @@
     width: 15%;
     background-color: rgba(white, 0.8);
   }
+
   span {
     width: 35%;
     text-align: center;
@@ -16,11 +19,13 @@
     font-size: 1rem;
     font-family: $font-sans-serif;
     filter: drop-shadow(2px 2px 1px rgba(black, 0.3));
+
     .ak-icon {
       width: 1rem;
       height: 1rem;
     }
   }
+
   &::after {
     content: "";
     height: 3px;

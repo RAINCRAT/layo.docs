@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .ak {
   &-cube {
     display: inline-block;
@@ -19,8 +21,7 @@
 
     color: var(--cube-color, rgba($blue, 0.5));
     background-color: transparent;
-    border: var(--cube-border-width, $cube-border-width) solid
-      var(--cube-color, rgba($blue, 0.5));
+    border: var(--cube-border-width, $cube-border-width) solid var(--cube-color, rgba($blue, 0.5));
     border-radius: 0.2rem;
 
     &.front {
@@ -28,28 +29,23 @@
     }
 
     &.back {
-      transform: rotateY(180deg)
-        translateZ(calc(var(--cube-size, #{$cube-size}) / 2));
+      transform: rotateY(180deg) translateZ(calc(var(--cube-size, #{$cube-size}) / 2));
     }
 
     &.right {
-      transform: rotateY(90deg)
-        translateZ(calc(var(--cube-size, #{$cube-size}) / 2));
+      transform: rotateY(90deg) translateZ(calc(var(--cube-size, #{$cube-size}) / 2));
     }
 
     &.left {
-      transform: rotateY(-90deg)
-        translateZ(calc(var(--cube-size, #{$cube-size}) / 2));
+      transform: rotateY(-90deg) translateZ(calc(var(--cube-size, #{$cube-size}) / 2));
     }
 
     &.top {
-      transform: rotateX(90deg)
-        translateZ(calc(var(--cube-size, #{$cube-size}) / 2));
+      transform: rotateX(90deg) translateZ(calc(var(--cube-size, #{$cube-size}) / 2));
     }
 
     &.bottom {
-      transform: rotateX(-90deg)
-        translateZ(calc(var(--cube-size, #{$cube-size}) / 2));
+      transform: rotateX(-90deg) translateZ(calc(var(--cube-size, #{$cube-size}) / 2));
     }
 
     &__lines {
@@ -62,6 +58,7 @@
     }
 
     &__line- {
+
       &-tl,
       &-br,
       &-tr,
