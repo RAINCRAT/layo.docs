@@ -61,8 +61,9 @@ export default defineUserConfig({
     lastUpdated: '上次更新',
     repo: 'https://github.com/RAINCRAT/layo.docs',
     docsDir: 'docs',
-    // editLinks: false,
-    // editLinkText: '帮助改善此页面！( ￣□￣)/',
+    editLink: false,
+    editLinkText: '帮助改善此页面！( ￣□￣)/',
+    contributors: false,
   }),
 
   bundler: viteBundler(),
